@@ -1,0 +1,7 @@
+{
+  "name": "shadows-tracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

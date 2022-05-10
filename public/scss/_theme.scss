@@ -1,0 +1,20 @@
+:root {
+    --primary: #0B0A0A;
+    --primary-dark: #0B0A0A;
+    --text-color: #FCFBFB;
+    --text-color-inverted: #0B0A0A;
+    --grey: #ededed;
+  }
+  
+  .primary {
+    color: var(--primary);
+  }
+
+  .txt-color{
+    color: var(--text-color);
+  }
+  
+  .primary-bg {
+    background: var(--primary);
+    color: var(--text-color);
+  }

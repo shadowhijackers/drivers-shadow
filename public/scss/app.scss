@@ -1,0 +1,46 @@
+@import "reset";
+@import "theme";
+@import "typography";
+@import "base";
+@import "icons";
+@import "utils";
+@import "components/components";
+
+.app{
+    &-header{
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 3px 5px -1px #566e74, 0 6px 10px #53d5fb, 0 1px 18px #aad3df;
+        z-index: 2;
+        &__title{
+            text-align: center;
+        }
+        &__sub-title{
+            text-align: center;
+        }
+    }
+
+    &-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        &__btn{
+            height: 4.5rem;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
