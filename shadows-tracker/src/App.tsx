@@ -22,6 +22,8 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import Tracker from './pages/Tracker/Tracker';
 
 setupIonicReact();
 
@@ -32,8 +34,11 @@ const App: React.FC = () => (
         <Route exact path="/login">
           <Login />
         </Route>
+        <Route exact path="/sighup">
+          <SignUp />
+        </Route>
         <Route exact path="/home">
-          <Home />
+          <Tracker />
         </Route>
         <Route exact path="/">
           <Redirect to="/login" />
