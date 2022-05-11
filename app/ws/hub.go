@@ -1,7 +1,7 @@
 package ws
 
 import (
-	"github.com/shadowhijackers/share-gang-locations/app/models"
+	"github.com/shadowhijackers/drivers-shadow/app/models"
 )
 
 type message struct {

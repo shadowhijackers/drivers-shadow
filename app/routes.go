@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/shadowhijackers/share-gang-locations/app/ws"
+	"github.com/shadowhijackers/drivers-shadow/app/ws"
 )
 
 type App struct {

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/shadowhijackers/share-gang-locations/app/models"
+	"github.com/shadowhijackers/drivers-shadow/app/models"
 )
 
 type gang struct {

@@ -1,4 +1,4 @@
-module github.com/shadowhijackers/share-gang-locations
+module github.com/shadowhijackers/drivers-shadow
 
 go 1.18
 

@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"github.com/shadowhijackers/share-gang-locations/app/models"
+	"github.com/shadowhijackers/drivers-shadow/app/models"
 )
 
 const (

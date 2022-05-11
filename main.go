@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/shadowhijackers/share-gang-locations/app"
-	"github.com/shadowhijackers/share-gang-locations/app/models"
-	"github.com/shadowhijackers/share-gang-locations/app/schedulers"
+	"github.com/shadowhijackers/drivers-shadow/app"
+	"github.com/shadowhijackers/drivers-shadow/app/models"
+	"github.com/shadowhijackers/drivers-shadow/app/schedulers"
 )
 
 func init() {
