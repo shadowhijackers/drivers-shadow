@@ -51,6 +51,8 @@ github.com/robfig/cron/v3
 # github.com/ugorji/go/codec v1.2.7
 ## explicit; go 1.11
 github.com/ugorji/go/codec
+# go.mongodb.org/mongo-driver v1.9.1
+## explicit; go 1.10
 # golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4
 ## explicit; go 1.17
 golang.org/x/crypto/sha3
