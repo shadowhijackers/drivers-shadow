@@ -13,6 +13,7 @@ import (
 
 func init() {
 	models.RestoreDBFromBackUped()
+	models.RestoreUsersDB()
 	schedulers.StartDataCleaner()
 
 	err := godotenv.Load(".env")

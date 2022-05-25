@@ -21,6 +21,8 @@ func (a *App) setupRouters() {
 	a.Router.LoadHTMLGlob("public/views/*.html")
 
 	a.Router.GET("/", indexHandler)
+	a.Router.POST("/signup", signUpHandler)
+	a.Router.POST("/login", loginHandler)
 	a.Router.GET("/gangs/:gangId/locations", gangLocationsHandler)
 	a.Router.GET("/ws/gangs/:gangId/locations", ws.ServeWS)
 }
