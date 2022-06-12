@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/shadowhijackers/drivers-shadow/app/ws"
 )
@@ -12,6 +13,9 @@ type App struct {
 func (a *App) Initializer() {
 	go ws.SocketHub.Listener()
 	a.Router = gin.New()
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true // no cors
+	a.Router.Use(cors.New(config))
 	a.setupRouters()
 }
 

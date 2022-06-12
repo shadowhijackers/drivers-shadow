@@ -1,8 +1,11 @@
+import worker from './locations-worker.js';
+
 export default class LocationsService {
   constructor() {
     this.watcherId = '';
-    this.locationsWorker = new Worker('/assets/services/locations-worker.js');
-    console.log(this.locationsWorker)
+    const code = worker.toString();
+    const blob = new Blob([`(${code})()`]);
+    this.locationsWorker = new window.Worker(URL.createObjectURL(blob));
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by this browser.");
     }

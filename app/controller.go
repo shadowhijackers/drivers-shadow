@@ -25,17 +25,17 @@ func signUpHandler(c *gin.Context) {
 	}
 	err := c.BindJSON(&userInfo)
 	if err != nil {
-		c.IndentedJSON(http.StatusForbidden, map[string]interface{}{"status": "error", "message": "Send proper data"})
+		c.JSON(http.StatusForbidden, gin.H{"status": "error", "message": "Send proper data"})
 		return
 	}
 
 	if userInfo.Name != "" && userInfo.Password != "" {
 		err = models.AddUser(&models.User{Name: userInfo.Name, Password: []byte(userInfo.Password), Type: userInfo.Type})
 		if err != nil {
-			c.IndentedJSON(http.StatusForbidden, map[string]interface{}{"status": "error", "message": err.Error()})
+			c.JSON(http.StatusForbidden, gin.H{"status": "error", "message": err.Error()})
 			return
 		}
-		c.IndentedJSON(http.StatusOK, map[string]interface{}{"status": "success"})
+		c.JSON(http.StatusOK, gin.H{"status": "success"})
 	}
 }
 
@@ -48,13 +48,13 @@ func loginHandler(c *gin.Context) {
 	err := c.BindJSON(&userInfo)
 
 	if err != nil {
-		c.IndentedJSON(http.StatusForbidden, map[string]interface{}{"status": "error"})
+		c.JSON(http.StatusForbidden, gin.H{"status": "error"})
 		return
 	}
 
 	var user models.User
 	if user, err = models.ValidateUser(userInfo.Name, userInfo.Password); err == nil {
-		c.IndentedJSON(http.StatusOK, map[string]interface{}{"status": "success", "user": user})
+		c.JSON(http.StatusOK, gin.H{"status": "success", "user": user})
 	}
 
 }

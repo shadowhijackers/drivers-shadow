@@ -1,3 +1,5 @@
+import {WS_API_URL} from '../environment';
+
 // websocket service
 export default class WsSocketService {
     constructor() {
@@ -15,7 +17,7 @@ export default class WsSocketService {
             if (window["WebSocket"]) {
                 const params = window.location.href.split("/");
                 const gangId = params[params.length - 2];
-                const url = "wss://" + document.location.host + "/ws/gangs/" + gangId + "/locations";
+                const url = WS_API_URL + "/ws/gangs/" + "test" + "/locations";
                 console.log(url)
                 this.conn = new WebSocket(url);
                 if (this.reconnectTimerId && this.conn.readyState == 0) {

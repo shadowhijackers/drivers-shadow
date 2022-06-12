@@ -3,6 +3,7 @@ package ws
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -17,9 +18,20 @@ const (
 	maxMessageSize = 512
 )
 
+var origins = []string{"http://127.0.0.1:3000"}
+
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
+	CheckOrigin: func(r *http.Request) bool {
+		// var origin = r.Header.Get("origin")
+		// for _, allowOrigin := range origins {
+		// 	if origin == allowOrigin {
+		// 		return true
+		// 	}
+		// }
+		return true
+	},
 }
 
 func ServeWS(c *gin.Context) {

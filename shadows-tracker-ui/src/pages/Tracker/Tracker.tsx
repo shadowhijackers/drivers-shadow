@@ -24,6 +24,7 @@ function Tracker(props: any) {
         self.setupUser();
         self.initMap();
         self.wsSocketListener();
+        // eslint-disable-next-line no-restricted-globals
         self.uniqueId = location.href.split("/")[location.href.split("/").length-2]
     }, []);
 
@@ -77,6 +78,7 @@ function Tracker(props: any) {
             }
         },
         shareTrackerLink() {
+            // eslint-disable-next-line no-restricted-globals
             const URL = `${location.origin}/gangs/${self.uniqueId}/locations`;
             navigator.clipboard.writeText(URL).then(() => {
                 self.alertService.show("Copied link");
@@ -98,7 +100,7 @@ function Tracker(props: any) {
             </IonHeader>
             <IonContent fullscreen>
                 <section>
-                    <div id="mapId"></div>
+                    <div style={{width: "100vw", height: "90vh"}} id="mapId"></div>
                 </section>
             </IonContent>
         </IonPage>
