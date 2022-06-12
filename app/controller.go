@@ -54,7 +54,7 @@ func loginHandler(c *gin.Context) {
 
 	var user models.User
 	if user, err = models.ValidateUser(userInfo.Name, userInfo.Password); err == nil {
-		c.JSON(http.StatusOK, gin.H{"status": "success", "user": user})
+		c.JSON(http.StatusOK, gin.H{"status": "success", "user": gin.H{"name": user.Name, "id": user.Id, "type": user.Type}})
 	}
 
 }

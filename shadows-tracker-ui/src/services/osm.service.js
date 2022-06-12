@@ -25,7 +25,7 @@ export default class OSMService {
         }
     }
     initMap(){
-        this.mapIns= L.map('mapId').setView([13.0685, 80.2484], 5); // default view to chennai
+        this.mapIns= L.map('mapId').setView([13.0685, 80.2484], 11); // default view to chennai
         L.tileLayer(this.MAP.API, this.MAP.CONFIG).addTo(this.mapIns);
         this.mapPopup = L.popup();        
     }

@@ -1,14 +1,14 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useEffect } from "react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter } from "@ionic/react";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../../contexts";
 import AlertService from "../../services/alert.service";
 import LocationsService from "../../services/locations.service";
 import OSMService from "../../services/osm.service";
 import WsSocketService from "../../services/ws-socket.service";
 
 function Tracker(props: any) {
-
+    const userProvider: any = useContext(UserContext);
     let self: any = {
-        title: "GANG LOCATIONS TRACKER",
         wsStatus: "",
         logsData: "",
         uniqueId: "",
@@ -17,10 +17,10 @@ function Tracker(props: any) {
         showGangInfo: false,
         osmService: new OSMService(),
         locationService: new LocationsService(),
-        wsService: new WsSocketService(),
+        wsService: new WsSocketService(userProvider?.user?.name),
         alertService: new AlertService()
     }
-    useEffect(() => {
+    useIonViewDidEnter(() => {
         self.setupUser();
         self.initMap();
         self.wsSocketListener();
@@ -95,7 +95,7 @@ function Tracker(props: any) {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>SHADOW TRACKER</IonTitle>
+                    <IonTitle>DRIVER'S SHADOW</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
@@ -107,3 +107,4 @@ function Tracker(props: any) {
     )
 };
 export default Tracker;
+

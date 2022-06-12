@@ -2,7 +2,8 @@ import {WS_API_URL} from '../environment';
 
 // websocket service
 export default class WsSocketService {
-    constructor() {
+    constructor(driverId) {
+        this.driverId = driverId;
         this.conn = null;
         this.reconnectTimerId = null;
         this.status = ""; // todo
@@ -17,7 +18,7 @@ export default class WsSocketService {
             if (window["WebSocket"]) {
                 const params = window.location.href.split("/");
                 const gangId = params[params.length - 2];
-                const url = WS_API_URL + "/ws/gangs/" + "test" + "/locations";
+                const url = WS_API_URL + "/ws/gangs/" + this.driverId + "/locations";
                 console.log(url)
                 this.conn = new WebSocket(url);
                 if (this.reconnectTimerId && this.conn.readyState == 0) {

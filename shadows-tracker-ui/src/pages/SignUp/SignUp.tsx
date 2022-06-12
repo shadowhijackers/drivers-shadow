@@ -57,7 +57,6 @@ const SignUp: React.FC<any> = () => {
           header: "Alert",
           message: result.data.status,
           buttons: [
-            "Cancel",
             // eslint-disable-next-line no-restricted-globals
             { text: "Ok", handler: (d) => history.push('/login') },
           ],
